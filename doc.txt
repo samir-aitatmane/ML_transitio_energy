@@ -1,0 +1,381 @@
+"""
+🏡 Application Streamlit : Simulation rénovation énergétique
+------------------------------------------------------------
+Cet outil permet :
+1. De saisir les caractéristiques d’un logement et des travaux prévus.
+2. De calculer le coût estimé des travaux de rénovation.
+3. D’estimer le gain énergétique potentiel via un modèle ML (fichier pickle).
+4. De comparer coûts et gains pour différents travaux et combinaisons.
+
+Structure du code :
+- SECTION 1 : Importations et style
+- SECTION 2 : Interface utilisateur (paramètres logement, chauffage, isolation)
+- SECTION 3 : Fonctions utilitaires (mappings, conversions)
+- SECTION 4 : Fonction de calcul des coûts
+- SECTION 5 : Prédiction du gain
+- SECTION 6 : Calcul des coûts/gains pour combinaisons
+- SECTION 7 : Tests
+
+Dépendances :
+  executé cette commande dans le terminal :
+   pip install -r requirements.txt
+"""
+
+# === SECTION 1 : IMPORTATIONS ===
+import streamlit as st
+import numpy as np
+import pickle
+import itertools
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# === MISE EN PAGE ET STYLING ===
+st.markdown(
+    """
+    <style>
+    .stApp {background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);}
+    .big-font {font-size:22px !important; color:#1a237e;}
+    .section-title {font-size:18px !important; color:#1565c0; margin-top: 30px;}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+# === TITRE PRINCIPAL ===
+st.markdown('<div class="big-font">🏡 Simulation rénovation énergétique</div>', unsafe_allow_html=True)
+
+
+# === SECTION 2 : INTERFACE UTILISATEUR ===
+st.markdown('<div class="section-title">Paramètres du logement</div>', unsafe_allow_html=True)
+
+# --- Colonne gauche : infos générales ---
+col1, col2 = st.columns(2)
+with col1:
+    surface = st.number_input("Surface habitable (m²)", min_value=10, max_value=500, value=70)
+    annee = st.number_input("Année de construction", min_value=1900, max_value=2025, value=1990)
+    dpe = st.selectbox("DPE", ["Pas de DPE", "A", "B", "C", "D", "E", "F", "G"])
+    region = st.selectbox(
+        "Région",
+        [
+            "Île-de-France", "Hauts-de-France", "Grand Est", "Normandie", "Bretagne",
+            "Pays de la Loire", "Centre-Val de Loire", "Bourgogne-Franche-Comté",
+            "Auvergne-Rhône-Alpes", "Nouvelle-Aquitaine", "Occitanie", "PACA et Corse"
+        ]
+    )
+
+# --- Colonne droite : équipements existants ---
+with col2:
+    travaux = st.multiselect(
+        "Travaux effectués",
+        [
+            "Isolation combles", "Isolation extérieure", "Isolation plancher",
+            "Chauffage", "Ventilation", "Eau chaude", "Ouvertures",
+            "Régulation chauffage", "Toiture", "Rénovation sans isolation toiture",
+            "Isolation intérieure"
+        ]
+    )
+    chauffage_actuel = st.selectbox(
+        "Type de chauffage actuel", ["Gaz", "Fioul", "Électrique", "Bois", "Mixte", "Autre"]
+    )
+    age_chauffage = st.selectbox(
+        "Âge du chauffage actuel", ["<10 ans", "10–15 ans", "15–20 ans", ">20 ans", "Rénové", "Inconnu"]
+    )
+    ventilation = st.selectbox("Système de ventilation prévu", ["Aucune", "Simple flux"])
+    ecs_type = st.selectbox(
+        "Type d'ECS (Eau Chaude Sanitaire)",
+        ["Ballon ECS vertical", "Chauffe-eau thermodynamique", "Aucun"]
+    )
+
+# --- Chauffage après rénovation ---
+spec0_chauffage_label = st.selectbox(
+    "Nouveau système de chauffage",
+    ["Pas de changement", "Chaudière condensation", "PAC", "Radiateurs électriques"]
+)
+spec0_mapping = {
+    "Pas de changement": -999,
+    "Chaudière condensation": 1,
+    "PAC": 2,
+    "Radiateurs électriques": 3
+}
+spec0_chauffage = spec0_mapping[spec0_chauffage_label]
+
+spec3_chauffage_label = st.selectbox(
+    "Système installé après rénovation",
+    ["Aucun", "PAC air/eau", "PAC air/air", "Chaudière condensation", "Radiateurs électriques"]
+)
+spec3_mapping = {
+    "Aucun": -999,
+    "PAC air/eau": 22,
+    "PAC air/air": 21,
+    "Chaudière condensation": 12,
+    "Radiateurs électriques": 3
+}
+spec3_chauffage = spec3_mapping[spec3_chauffage_label]
+
+# === SECTION : ISOLATION ===
+st.markdown('<div class="section-title">Isolation</div>', unsafe_allow_html=True)
+
+# --- Entrées isolation (colonne gauche) ---
+col3, col4 = st.columns(2)
+with col3:
+    iti_type = st.selectbox("Type d’isolant ITI", ["Non renseigné", "Laine de verre", "Isolant biosourcé", "Isolant synthétique", "Isolant mince"])
+    iti_surface = st.selectbox("Part de murs isolés (ITI)", ["0–25 %", "25–50 %", "50–100 %"])
+    iti_epaisseur = st.slider("Épaisseur ITI (cm)", min_value=0, max_value=50, value=20)
+    iti_surface_m2 = st.number_input("Surface de mur à isoler ITI (m²)", min_value=0, max_value=500, value=0)
+    toiture_type = st.selectbox("Type d’isolant toiture", ["Non renseigné", "Laine de verre", "Isolant biosourcé", "Isolant synthétique", "Isolant mince"])
+    toiture_surface = st.selectbox("Part de surface isolée toiture", ["0–25 %", "25–50 %", "50–100 %"])
+    toiture_epaisseur = st.slider("Épaisseur toiture (cm)", min_value=0, max_value=50, value=20)
+    toiture_surface_m2 = st.number_input("Surface de toiture à isoler (m²)", min_value=0, max_value=500, value=0)
+
+# --- Entrées isolation (colonne droite) ---
+with col4:
+    plancher_type = st.selectbox("Type d’isolant plancher", ["Non renseigné", "Laine de verre", "Isolant biosourcé", "Isolant synthétique", "Isolant mince"])
+    plancher_surface = st.selectbox("Part de surface isolée plancher", ["0–25 %", "25–50 %", "50–100 %"])
+    plancher_epaisseur = st.slider("Épaisseur plancher (cm)", min_value=0, max_value=50, value=20)
+    plancher_surface_m2 = st.number_input("Surface de plancher à isoler (m²)", min_value=0, max_value=500, value=0)
+    ite_type = st.selectbox("Type d’isolant extérieur", ["Non renseigné", "Laine de verre", "Isolant biosourcé", "Isolant synthétique", "Isolant mince"])
+    ite_surface = st.selectbox("Part de surface isolée extérieure", ["0–25 %", "25–50 %", "50–100 %"])
+    ite_epaisseur = st.slider("Épaisseur ITE (cm)", min_value=0, max_value=50, value=20)
+    ite_surface_m2 = st.number_input("Surface de mur à isoler ITE (m²)", min_value=0, max_value=500, value=0)
+    ouvertures_ratio = st.selectbox("Proportion des ouvertures rénovées", ["Aucune", "0–25%", "25–50%", "50–75%", "75–100%"])
+
+
+# === SECTION 3 : FONCTIONS UTILITAIRES ===
+def annee_to_anciennete(annee):
+    """
+    Convertit l'année de construction en code d'ancienneté.
+    Codes :
+        1 = avant 1948
+        2 = 1948-1974
+        3 = 1975-1981
+        4 = 1982-1989
+        5 = 1990-2000
+        6 = 2001-2012
+        7 = après 2012
+    """
+    if annee < 1948: return 1
+    elif annee <= 1974: return 2
+    elif annee <= 1981: return 3
+    elif annee <= 1989: return 4
+    elif annee <= 2000: return 5
+    elif annee <= 2012: return 6
+    else: return 7
+
+# === SECTION 3  : FONCTIONS UTILITAIRES ===
+
+def dpe_to_code(dpe):
+    """
+    Convertit la lettre DPE en code numérique pour le modèle.
+
+    Paramètres :
+        dpe (str) : Lettre de DPE ("A", "B", ..., "G" ou "Pas de DPE")
+
+    Retour :
+        int : Code DPE (A=1, ..., G=7, Pas de DPE=-999)
+    """
+    mapping = {
+        "A": 1, "B": 2, "C": 3, "D": 4,
+        "E": 5, "F": 6, "G": 7, "Pas de DPE": -999
+    }
+    return mapping.get(dpe, -999)
+
+
+def region_to_code(region):
+    """
+    Attribue un code numérique à chaque région.
+
+    Paramètres :
+        region (str) : Nom complet de la région.
+
+    Retour :
+        int : Code numérique (1 à 12)
+    """
+    mapping = {
+        "Île-de-France": 1, "Hauts-de-France": 2, "Grand Est": 3,
+        "Normandie": 4, "Bretagne": 5, "Pays de la Loire": 6,
+        "Centre-Val de Loire": 7, "Bourgogne-Franche-Comté": 8,
+        "Auvergne-Rhône-Alpes": 9, "Nouvelle-Aquitaine": 10,
+        "Occitanie": 11, "PACA et Corse": 12
+    }
+    return mapping.get(region, -999)
+
+
+def surface_to_code(surface_str):
+    """
+    Convertit la proportion d’isolation en code.
+
+    Paramètres :
+        surface_str (str) : Texte tel que "0–25 %", "25–50 %", "50–100 %".
+
+    Retour :
+        int : Code (1=0–25%, 2=25–50%, 3=50–100%)
+    """
+    mapping = {"0–25 %": 1, "25–50 %": 2, "50–100 %": 3}
+    return mapping.get(surface_str, 0)
+
+
+def ouvertures_to_code(ratio):
+    """
+    Convertit la proportion d'ouvertures rénovées en code.
+
+    Paramètres :
+        ratio (str) : Proportion textuelle.
+
+    Retour :
+        int : Code (0 à 4)
+    """
+    mapping = {
+        "Aucune": 0, "0–25%": 1, "25–50%": 2,
+        "50–75%": 3, "75–100%": 4
+    }
+    return mapping.get(ratio, 0)
+
+
+def isolant_to_code(type_isolant):
+    """
+    Associe un code numérique à un type d’isolant.
+
+    Paramètres :
+        type_isolant (str) : Nom de l’isolant.
+
+    Retour :
+        int : Code (0=non renseigné, 1 à 4 selon le type)
+    """
+    mapping = {
+        "Non renseigné": 0, "Laine de verre": 1,
+        "Isolant biosourcé": 2, "Isolant synthétique": 3,
+        "Isolant mince": 4
+    }
+    return mapping.get(type_isolant, 0)
+
+
+# === SECTION 4 : CALCUL DU COÛT TOTAL ===
+
+def calcul_cout_total_intelligent(travaux, surfaces, epaisseurs):
+    """
+    Calcule le coût total estimé des travaux de rénovation.
+
+    Paramètres :
+        travaux (list[str]) :
+            Liste des types de travaux à réaliser
+            (ex: "Isolation combles", "Chauffage", etc.)
+        surfaces (dict) :
+            Surfaces en m² associées à certains travaux
+            (ex: {"Isolation combles": 50, "Isolation extérieure": 80, ...})
+        epaisseurs (dict) :
+            Épaisseurs d’isolants en cm pour certains travaux.
+
+    Retour :
+        float : Coût total en euros (arrondi à l’euro près).
+    """
+    cout_total = 0
+
+    # Prix unitaires moyens (€/m² ou forfait)
+    prix_unitaires = {
+        "Isolation combles": 40,
+        "Isolation extérieure": 120,
+        "Isolation plancher": 80,
+        "Chauffage": 8000,
+        "Ventilation": 3500,
+        "Eau chaude": 2000,
+        "Ouvertures": 500,
+        "Régulation chauffage": 1500,
+        "Toiture": 10000,
+        "Isolation intérieure": 60
+    }
+
+    for t in travaux:
+        if t in surfaces:
+            cout_total += prix_unitaires.get(t, 0) * surfaces[t]
+        else:
+            cout_total += prix_unitaires.get(t, 0)
+
+    return round(cout_total, 2)
+
+
+# === SECTION 5 : PRÉDICTION DU GAIN ÉNERGÉTIQUE ===
+
+def prediction_gain(features, model_path="modele_ml.pkl"):
+    """
+    Utilise un modèle Machine Learning pré-entrainé pour estimer
+    le gain énergétique après travaux.
+
+    Paramètres :
+        features (list[float]) :
+            Liste des caractéristiques numériques d'entrée pour le modèle.
+        model_path (str) :
+            Chemin du fichier pickle contenant le modèle entraîné.
+
+    Retour :
+        float : Gain énergétique estimé (en %).
+    """
+    try:
+        with open(model_path, "rb") as f:
+            model = pickle.load(f)
+        gain = model.predict([features])[0]
+        return float(gain)
+    except FileNotFoundError:
+        st.error("⚠ Modèle ML introuvable.")
+        return 0.0
+
+
+# === SECTION 6 : CALCUL DES COMBINAISONS TRAVAUX ===
+
+def calcul_comparatif(travaux_possibles, surfaces, epaisseurs):
+    """
+    Calcule et compare le coût et le gain énergétique
+    pour toutes les combinaisons possibles de travaux.
+
+    Paramètres :
+        travaux_possibles (list[str]) :
+            Liste des types de travaux envisageables.
+        surfaces (dict) :
+            Surfaces associées aux travaux.
+        epaisseurs (dict) :
+            Épaisseurs associées aux travaux.
+
+    Retour :
+        pd.DataFrame :
+            Tableau avec colonnes ["Travaux", "Coût (€)", "Gain (%)"]
+    """
+    combinaisons = []
+    for r in range(1, len(travaux_possibles) + 1):
+        for combo in itertools.combinations(travaux_possibles, r):
+            cout = calcul_cout_total_intelligent(combo, surfaces, epaisseurs)
+            features = [surface, annee_to_anciennete(annee), dpe_to_code(dpe), region_to_code(region)]
+            gain = prediction_gain(features)
+            combinaisons.append({"Travaux": ", ".join(combo), "Coût (€)": cout, "Gain (%)": gain})
+
+    return pd.DataFrame(combinaisons)
+
+
+# === SECTION 7 : TESTS ===
+
+if st.button("Calculer coût et gain"):
+    surfaces_dict = {
+        "Isolation combles": toiture_surface_m2,
+        "Isolation extérieure": ite_surface_m2,
+        "Isolation plancher": plancher_surface_m2,
+        "Isolation intérieure": iti_surface_m2
+    }
+    epaisseurs_dict = {
+        "Isolation combles": toiture_epaisseur,
+        "Isolation extérieure": ite_epaisseur,
+        "Isolation plancher": plancher_epaisseur,
+        "Isolation intérieure": iti_epaisseur
+    }
+
+    cout_total = calcul_cout_total_intelligent(travaux, surfaces_dict, epaisseurs_dict)
+    st.success(f"💰 Coût total estimé : {cout_total:,.0f} €")
+
+    features = [surface, annee_to_anciennete(annee), dpe_to_code(dpe), region_to_code(region)]
+    gain_estime = prediction_gain(features)
+    st.info(f"📈 Gain énergétique estimé : {gain_estime:.2f} %")
+
+    # Comparaison multi-travaux
+    st.subheader("Comparaison des combinaisons de travaux")
+    df = calcul_comparatif(
+        ["Isolation combles", "Isolation extérieure", "Chauffage"],
+        surfaces_dict, epaisseurs_dict
+    )
+    st.dataframe(df)

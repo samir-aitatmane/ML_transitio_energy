@@ -1,0 +1,21 @@
+type_isolation,epaisseur_min,epaisseur_max,prix_m2
+ITI,0,9,65
+ITI,10,19,80
+ITI,20,29,110
+ITI,30,1000,140
+ITE,0,9,220
+ITE,10,19,267
+ITE,20,29,280
+ITE,30,1000,310
+plancher sol,0,9,60
+plancher sol,10,19,71
+plancher sol,20,29,90
+plancher sol,30,1000,140
+combles,0,9,49
+combles,10,19,59
+combles,20,29,70
+combles,30,1000,84
+rampants,0,9,92
+rampants,10,19,110
+rampants,20,29,137
+rampants,30,1000,168

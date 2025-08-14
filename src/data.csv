@@ -1,0 +1,201 @@
+Type de bien,Surface habitable,Année de construction,État de l’isolation,Système de chauffage,Production d’eau chaude,Ventilation,Travaux effectués,Gain estimé (%),Coût estimé (€)
+Studio,199,1964,Mauvaise,Pompe à chaleur,Chaudière,Simple flux,Chauffage,29.520801406947513,5799.04680108411
+Studio,107,1973,Mauvaise,Électrique,Chaudière,Double flux,Fenêtres,50.78434524402319,10068.886205774494
+Appartement,180,2007,Moyenne,Gaz,Chaudière,Simple flux,Chauffage,38.651909209730874,7300.766704777589
+Studio,194,2011,Mauvaise,Pompe à chaleur,Instantané,Simple flux,Chauffage,52.29672237049763,27851.68646633563
+Appartement,186,1967,Bonne,Pompe à chaleur,Ballon,Double flux,Isolation,21.753757304535387,5711.540332242587
+Studio,191,1957,Mauvaise,Fioul,Ballon,Simple flux,Fenêtres,15.022984828343429,30703.733592070796
+Maison,153,2003,Moyenne,Pompe à chaleur,Ballon,Simple flux,Chauffage,51.32566260272492,19090.657068051096
+Maison,33,1997,Mauvaise,Pompe à chaleur,Ballon,Naturelle,Fenêtres,7.487500890079594,14362.552569004045
+Appartement,101,2002,Moyenne,Gaz,Chaudière,Simple flux,Aucun,49.120833941472185,4832.924459831291
+Studio,28,1950,Mauvaise,Fioul,Instantané,Simple flux,Fenêtres,45.0953942422543,31308.273174065936
+Appartement,60,1977,Mauvaise,Gaz,Ballon,Simple flux,Fenêtres,25.39500387090465,27415.967601217075
+Appartement,118,1993,Moyenne,Fioul,Instantané,Simple flux,Chauffage,11.577683526606593,29103.30191447381
+Appartement,24,1963,Mauvaise,Fioul,Chaudière,Naturelle,Chauffage,11.098995144650722,18694.787070899263
+Studio,82,2001,Bonne,Pompe à chaleur,Ballon,Simple flux,Chauffage,38.24295586027995,22513.96146946358
+Appartement,55,1962,Mauvaise,Fioul,Instantané,Double flux,Fenêtres,56.13337087884152,32708.574423447844
+Appartement,153,1977,Moyenne,Électrique,Instantané,Double flux,Chauffage,54.28502149579213,14084.132048930827
+Appartement,148,1976,Moyenne,Gaz,Chaudière,Simple flux,Chauffage,5.382367179215489,21408.3974979475
+Appartement,81,1986,Bonne,Fioul,Ballon,Naturelle,Chauffage,22.77616126114154,21714.043626247912
+Appartement,199,2011,Bonne,Électrique,Ballon,Naturelle,Isolation,44.17488244584431,7627.303338229196
+Appartement,132,1951,Moyenne,Pompe à chaleur,Ballon,Naturelle,Aucun,23.978918641467565,26105.351098651823
+Maison,149,2002,Moyenne,Pompe à chaleur,Ballon,Naturelle,Fenêtres,9.446932948299338,16046.86933033337
+Appartement,57,1973,Bonne,Pompe à chaleur,Ballon,Double flux,Isolation,34.46760762411172,5431.011262067515
+Appartement,143,2008,Moyenne,Pompe à chaleur,Chaudière,Naturelle,Fenêtres,22.92773978610366,10369.159807490836
+Maison,166,1969,Mauvaise,Pompe à chaleur,Chaudière,Simple flux,Fenêtres,26.27044404652956,37595.73957199591
+Appartement,30,2006,Bonne,Électrique,Instantané,Naturelle,Isolation,43.26814196397952,10684.900828297386
+Maison,131,2009,Bonne,Électrique,Chaudière,Double flux,Fenêtres,35.706139948390366,35540.18104119491
+Studio,28,1968,Mauvaise,Pompe à chaleur,Ballon,Simple flux,Fenêtres,51.8010646822132,37554.129780396004
+Maison,123,1974,Bonne,Électrique,Ballon,Double flux,Isolation,43.05423587309813,26774.52786109882
+Appartement,180,2017,Bonne,Électrique,Chaudière,Naturelle,Chauffage,41.16870907651889,23595.72692674792
+Studio,134,1971,Moyenne,Électrique,Ballon,Double flux,Aucun,31.77081841277003,36431.75393330505
+Studio,40,1979,Bonne,Pompe à chaleur,Instantané,Simple flux,Aucun,17.66018975328554,20969.348435620588
+Studio,68,1966,Moyenne,Gaz,Ballon,Simple flux,Isolation,25.358728514049442,2587.351428096962
+Appartement,65,2002,Mauvaise,Fioul,Chaudière,Naturelle,Aucun,26.18037507310589,34343.19351764056
+Studio,147,1967,Bonne,Électrique,Instantané,Double flux,Isolation,56.15092591459575,4675.812972282669
+Maison,51,1996,Moyenne,Fioul,Ballon,Naturelle,Chauffage,21.24098236304163,14256.92904106682
+Appartement,156,1992,Moyenne,Pompe à chaleur,Instantané,Simple flux,Isolation,49.51486355131825,32784.30899780887
+Appartement,171,1962,Moyenne,Fioul,Chaudière,Simple flux,Fenêtres,40.74801619277709,28674.74133579273
+Maison,134,1964,Moyenne,Électrique,Instantané,Naturelle,Isolation,23.048396711110257,7891.58143565428
+Maison,144,1971,Moyenne,Électrique,Ballon,Simple flux,Fenêtres,7.135910393618277,13524.089557582467
+Studio,120,1957,Bonne,Pompe à chaleur,Chaudière,Naturelle,Fenêtres,51.311269125658974,9386.441291805175
+Maison,66,2004,Bonne,Électrique,Ballon,Double flux,Chauffage,48.7352407122787,12291.62554795882
+Maison,109,2011,Mauvaise,Fioul,Chaudière,Simple flux,Aucun,14.531187603896518,7944.60762150127
+Maison,115,1997,Bonne,Pompe à chaleur,Chaudière,Simple flux,Aucun,57.51759043647567,30040.082834439203
+Studio,88,1971,Bonne,Fioul,Instantané,Double flux,Fenêtres,13.725554620337007,6566.256616614402
+Appartement,88,1996,Bonne,Électrique,Ballon,Double flux,Fenêtres,14.643164843913619,2652.121869606509
+Maison,195,1988,Bonne,Électrique,Ballon,Simple flux,Chauffage,7.643240830836855,38067.537800472666
+Maison,199,1959,Moyenne,Fioul,Ballon,Simple flux,Fenêtres,41.228149739041974,8191.508229094328
+Studio,21,1981,Mauvaise,Pompe à chaleur,Ballon,Naturelle,Fenêtres,12.06751942786506,32825.75871596811
+Studio,120,1961,Mauvaise,Gaz,Chaudière,Double flux,Chauffage,15.768512413411305,4635.729433256287
+Studio,65,1951,Bonne,Fioul,Ballon,Naturelle,Chauffage,8.915375665312595,14121.073951162929
+Maison,109,1983,Mauvaise,Gaz,Instantané,Double flux,Aucun,24.158513244925857,37592.629770516876
+Appartement,40,1985,Moyenne,Gaz,Chaudière,Naturelle,Aucun,45.24062654148021,6852.209718053692
+Appartement,115,1973,Mauvaise,Électrique,Chaudière,Simple flux,Chauffage,46.297908728532356,30672.62921521793
+Appartement,49,1966,Bonne,Électrique,Chaudière,Double flux,Aucun,54.253777567291024,16789.663791898198
+Appartement,166,1958,Mauvaise,Pompe à chaleur,Ballon,Naturelle,Fenêtres,31.538652230345335,20734.97499532859
+Appartement,88,1961,Bonne,Pompe à chaleur,Instantané,Simple flux,Fenêtres,57.040699858492964,31689.249917905698
+Studio,128,2002,Moyenne,Électrique,Instantané,Double flux,Chauffage,8.072913507254253,30007.351158058336
+Appartement,94,1967,Mauvaise,Pompe à chaleur,Chaudière,Double flux,Isolation,39.00199348239436,5842.66169266603
+Studio,193,1962,Moyenne,Gaz,Ballon,Naturelle,Isolation,13.063265193061401,21506.39441031093
+Maison,102,1957,Bonne,Gaz,Ballon,Simple flux,Chauffage,54.92315384917005,24491.772075208806
+Maison,178,1968,Bonne,Pompe à chaleur,Ballon,Naturelle,Chauffage,18.679828493665838,14549.596102725744
+Maison,192,1962,Moyenne,Pompe à chaleur,Ballon,Double flux,Fenêtres,11.534985394743956,6465.997377529986
+Appartement,186,1950,Mauvaise,Gaz,Ballon,Simple flux,Chauffage,31.27431899841252,5149.87022434746
+Appartement,185,1955,Moyenne,Pompe à chaleur,Chaudière,Simple flux,Aucun,22.747751355267102,3649.229765330565
+Appartement,183,1968,Bonne,Électrique,Instantané,Simple flux,Aucun,43.26617789415394,19272.560461175384
+Appartement,73,1952,Mauvaise,Gaz,Instantané,Double flux,Fenêtres,8.182514376673907,16991.828347108934
+Appartement,27,1985,Moyenne,Pompe à chaleur,Ballon,Double flux,Fenêtres,9.275405033074165,39027.00269131432
+Studio,164,1982,Bonne,Pompe à chaleur,Chaudière,Simple flux,Aucun,55.100995147161335,33256.41523108042
+Maison,134,2018,Mauvaise,Gaz,Ballon,Double flux,Fenêtres,53.2163817259186,22960.33915667466
+Appartement,138,1982,Moyenne,Gaz,Ballon,Naturelle,Aucun,25.72064334658674,30483.975399090737
+Appartement,105,2008,Mauvaise,Gaz,Chaudière,Simple flux,Isolation,7.025202719979526,7086.380514424061
+Appartement,74,1955,Bonne,Gaz,Instantané,Simple flux,Isolation,55.22411637417036,24235.682228367936
+Appartement,184,1966,Bonne,Électrique,Chaudière,Double flux,Aucun,57.47280649922973,25034.63610913344
+Maison,132,1981,Moyenne,Pompe à chaleur,Instantané,Naturelle,Isolation,32.39908526552411,20096.006477982537
+Studio,142,1999,Bonne,Électrique,Chaudière,Double flux,Isolation,48.54998117082981,24418.32409123017
+Studio,66,1972,Mauvaise,Gaz,Chaudière,Double flux,Isolation,49.2774567135649,36319.740229711795
+Maison,57,1999,Moyenne,Électrique,Ballon,Naturelle,Chauffage,10.005115007823164,29603.087240708675
+Appartement,185,1979,Mauvaise,Électrique,Instantané,Simple flux,Aucun,48.805947662063254,19455.17870195455
+Appartement,93,1966,Bonne,Électrique,Ballon,Simple flux,Isolation,23.081338565812953,26069.23246403558
+Studio,134,1972,Mauvaise,Pompe à chaleur,Instantané,Naturelle,Isolation,43.37171655333125,8842.556349273345
+Appartement,115,2016,Mauvaise,Gaz,Ballon,Simple flux,Isolation,17.311698624847633,33228.04420008907
+Maison,111,1991,Bonne,Électrique,Chaudière,Double flux,Aucun,34.393292705288765,15527.676402335474
+Maison,53,1998,Moyenne,Électrique,Chaudière,Naturelle,Aucun,10.075982242581034,20283.52497413914
+Maison,75,2012,Bonne,Gaz,Ballon,Simple flux,Fenêtres,46.15428297110121,9011.79873554234
+Studio,66,2005,Moyenne,Électrique,Ballon,Naturelle,Isolation,30.439409387323135,30403.895649082748
+Maison,75,1956,Mauvaise,Fioul,Instantané,Double flux,Chauffage,34.26624168959236,6072.53643091149
+Maison,57,1964,Bonne,Fioul,Chaudière,Double flux,Chauffage,22.714354107074804,10035.024265868697
+Maison,145,1993,Bonne,Gaz,Chaudière,Simple flux,Fenêtres,24.530736680361763,26655.26793107989
+Maison,130,1983,Mauvaise,Pompe à chaleur,Chaudière,Naturelle,Isolation,20.607674818929844,15797.127263148133
+Maison,83,2008,Mauvaise,Gaz,Ballon,Simple flux,Aucun,18.047473545479697,5867.733959575342
+Maison,89,1953,Moyenne,Fioul,Ballon,Double flux,Isolation,14.535547741211515,36077.08613580416
+Studio,150,1980,Bonne,Pompe à chaleur,Instantané,Double flux,Isolation,36.6799129793113,36861.0332972502
+Studio,153,2000,Moyenne,Gaz,Ballon,Naturelle,Chauffage,36.43869792084449,12639.205559090798
+Appartement,89,1975,Moyenne,Pompe à chaleur,Instantané,Simple flux,Fenêtres,18.33253528282941,6363.799340089734
+Maison,161,2013,Moyenne,Gaz,Ballon,Naturelle,Chauffage,31.46270560201496,22238.398436960262
+Appartement,153,1999,Moyenne,Gaz,Instantané,Double flux,Fenêtres,16.09517542816297,28013.718819433667
+Appartement,82,1966,Bonne,Fioul,Instantané,Double flux,Chauffage,48.685919748155435,6054.57150431057
+Appartement,81,2009,Moyenne,Électrique,Chaudière,Naturelle,Aucun,16.275099552928047,16410.686228624414
+Appartement,59,2013,Moyenne,Pompe à chaleur,Chaudière,Naturelle,Aucun,46.277605862092244,32382.410974941595
+Studio,184,1954,Mauvaise,Fioul,Ballon,Double flux,Isolation,24.735676626792635,35333.620550898115
+Appartement,165,1989,Mauvaise,Pompe à chaleur,Ballon,Naturelle,Aucun,21.575783079027815,30409.156446697543
+Studio,172,1966,Bonne,Fioul,Instantané,Double flux,Isolation,8.664051181494933,10702.964855142262
+Studio,198,2019,Moyenne,Fioul,Instantané,Naturelle,Fenêtres,43.154468407183614,8335.76887974856
+Studio,176,1982,Moyenne,Fioul,Instantané,Simple flux,Isolation,46.38217160213525,28865.257527251444
+Studio,52,2017,Moyenne,Électrique,Ballon,Simple flux,Chauffage,46.504941052306414,5910.80916827751
+Appartement,178,1996,Bonne,Pompe à chaleur,Instantané,Simple flux,Fenêtres,13.245458504182558,10711.553018840377
+Appartement,149,1976,Mauvaise,Fioul,Instantané,Double flux,Chauffage,37.946615062752954,33418.355456744976
+Maison,93,1987,Moyenne,Pompe à chaleur,Instantané,Naturelle,Isolation,57.10058367864984,7827.353318411047
+Appartement,123,2011,Moyenne,Gaz,Chaudière,Naturelle,Fenêtres,52.96681499192833,37420.49473437727
+Appartement,139,1986,Mauvaise,Électrique,Chaudière,Naturelle,Isolation,8.790684665197034,4938.200488573915
+Maison,59,1990,Moyenne,Fioul,Instantané,Simple flux,Isolation,17.974831902729466,8289.779393957011
+Maison,76,1950,Mauvaise,Électrique,Instantané,Naturelle,Fenêtres,38.43419165868423,16413.61653865086
+Appartement,156,2001,Bonne,Gaz,Ballon,Simple flux,Chauffage,26.89927814750188,22421.03291164107
+Studio,57,1951,Mauvaise,Électrique,Instantané,Double flux,Chauffage,29.871986748939392,10534.983271719315
+Studio,198,2003,Bonne,Fioul,Ballon,Simple flux,Fenêtres,22.131024412301656,31658.83688675133
+Studio,169,1975,Moyenne,Gaz,Chaudière,Naturelle,Aucun,57.858867460820036,7649.183654618292
+Maison,105,2012,Bonne,Pompe à chaleur,Chaudière,Naturelle,Aucun,22.0465309447736,17098.08838738872
+Studio,142,2005,Mauvaise,Électrique,Ballon,Simple flux,Aucun,7.010231731645218,19938.543914179972
+Studio,37,1950,Moyenne,Fioul,Instantané,Double flux,Isolation,34.39507401914858,20281.342038728268
+Maison,185,2000,Mauvaise,Pompe à chaleur,Chaudière,Simple flux,Chauffage,57.0363504173498,16185.754018630612
+Maison,129,1983,Bonne,Fioul,Instantané,Double flux,Chauffage,41.24081680505832,3029.6477151323725
+Studio,86,2008,Mauvaise,Gaz,Ballon,Simple flux,Chauffage,36.319393476992516,35723.49833551311
+Studio,27,1983,Mauvaise,Pompe à chaleur,Ballon,Double flux,Chauffage,57.94571252051811,37887.569571936394
+Maison,161,2004,Moyenne,Fioul,Ballon,Naturelle,Aucun,16.433744033031502,3008.2237472051493
+Appartement,166,1985,Bonne,Pompe à chaleur,Ballon,Double flux,Aucun,49.95939589561425,14989.059364519288
+Maison,149,2016,Mauvaise,Fioul,Chaudière,Simple flux,Isolation,47.560898776073714,15784.799997305927
+Appartement,191,1973,Bonne,Électrique,Ballon,Naturelle,Isolation,30.908599898159792,8920.071275220163
+Maison,134,1963,Bonne,Pompe à chaleur,Ballon,Simple flux,Aucun,19.183822698826127,7295.530814767317
+Studio,23,1975,Moyenne,Gaz,Chaudière,Double flux,Chauffage,42.57511210450148,33258.18728464361
+Appartement,61,1990,Moyenne,Électrique,Chaudière,Simple flux,Aucun,32.36056916889398,29367.69810202724
+Appartement,125,1976,Bonne,Fioul,Ballon,Naturelle,Fenêtres,18.790186330887877,26057.726407583006
+Appartement,157,1994,Bonne,Électrique,Chaudière,Double flux,Isolation,28.211983275287803,15447.11230932748
+Maison,126,2014,Mauvaise,Gaz,Instantané,Double flux,Aucun,26.41125877230871,12970.361997286594
+Appartement,58,2003,Moyenne,Fioul,Instantané,Double flux,Isolation,45.29146534656377,10167.734386448756
+Studio,167,2011,Mauvaise,Gaz,Instantané,Double flux,Aucun,47.400171206020204,6050.733619083328
+Appartement,59,1966,Bonne,Gaz,Chaudière,Naturelle,Fenêtres,28.915503623206043,11363.277263086058
+Studio,127,1993,Mauvaise,Électrique,Ballon,Double flux,Fenêtres,24.853564331701474,5480.1187864120975
+Studio,68,2010,Bonne,Électrique,Chaudière,Naturelle,Aucun,15.18231108612408,22592.23600037761
+Studio,27,1970,Bonne,Fioul,Chaudière,Double flux,Fenêtres,51.70576083609256,11487.384336649066
+Appartement,31,1964,Mauvaise,Électrique,Chaudière,Simple flux,Isolation,7.168474625267825,28811.85655559616
+Studio,164,1972,Moyenne,Gaz,Ballon,Double flux,Chauffage,6.867028822218936,28501.970155379917
+Appartement,134,1997,Moyenne,Fioul,Instantané,Simple flux,Isolation,45.97855014661212,4085.539356566047
+Studio,165,2008,Moyenne,Fioul,Chaudière,Double flux,Chauffage,25.058348720151823,23305.73337213353
+Appartement,117,1952,Bonne,Fioul,Ballon,Naturelle,Chauffage,8.59459874394183,13981.032837563193
+Appartement,23,1974,Bonne,Électrique,Chaudière,Simple flux,Isolation,53.21659578243472,17865.231193059903
+Studio,189,1983,Moyenne,Fioul,Instantané,Simple flux,Aucun,26.118013945584917,37438.41655815961
+Studio,58,1995,Bonne,Électrique,Chaudière,Simple flux,Isolation,31.393159116714987,25845.207602298062
+Studio,140,1959,Moyenne,Gaz,Instantané,Naturelle,Fenêtres,45.56702658738903,11073.531539195488
+Studio,192,1963,Moyenne,Électrique,Ballon,Double flux,Aucun,7.315125429999903,2679.2095198697248
+Maison,92,1964,Bonne,Gaz,Instantané,Double flux,Aucun,48.24897579285536,5397.6180878658615
+Maison,58,2005,Mauvaise,Électrique,Instantané,Double flux,Aucun,59.40517003973474,30247.40726995772
+Studio,91,1969,Bonne,Fioul,Ballon,Simple flux,Chauffage,33.19786810590797,10765.45284527483
+Maison,76,1990,Bonne,Électrique,Instantané,Double flux,Aucun,8.1813472109868,38825.89994535083
+Appartement,28,1969,Moyenne,Gaz,Chaudière,Naturelle,Isolation,33.33863583730992,20665.080953007808
+Appartement,22,1981,Mauvaise,Électrique,Chaudière,Simple flux,Chauffage,6.91758381286037,36007.014766657914
+Appartement,117,1960,Bonne,Pompe à chaleur,Instantané,Naturelle,Fenêtres,31.217225558170263,3686.3132142629975
+Maison,95,1991,Bonne,Fioul,Chaudière,Simple flux,Chauffage,9.784271795127559,17521.22209668655
+Studio,57,2021,Mauvaise,Gaz,Ballon,Double flux,Isolation,57.91670849256274,6159.816682069248
+Appartement,100,1989,Bonne,Pompe à chaleur,Ballon,Simple flux,Chauffage,50.357453125883204,15216.749900283336
+Maison,59,1982,Moyenne,Pompe à chaleur,Instantané,Simple flux,Chauffage,52.70118105278913,28917.79311517132
+Studio,64,2002,Moyenne,Pompe à chaleur,Instantané,Naturelle,Isolation,15.407184688175324,35502.2110452733
+Appartement,77,1980,Mauvaise,Électrique,Ballon,Naturelle,Aucun,45.89295409603843,8108.8760498357115
+Maison,96,1961,Mauvaise,Électrique,Chaudière,Double flux,Chauffage,58.96523979150829,26008.9140266334
+Studio,117,2009,Bonne,Fioul,Ballon,Naturelle,Isolation,6.013524530601961,18425.149787915467
+Maison,82,1977,Mauvaise,Électrique,Chaudière,Simple flux,Isolation,56.547566798004816,28139.65744743091
+Maison,87,2013,Bonne,Pompe à chaleur,Ballon,Simple flux,Isolation,31.04656386392987,4200.977501234335
+Studio,69,1963,Mauvaise,Gaz,Instantané,Naturelle,Fenêtres,46.704475776096245,2934.302825434457
+Studio,52,1955,Mauvaise,Fioul,Instantané,Naturelle,Isolation,5.056621391509837,8039.6547645167475
+Maison,48,1953,Bonne,Fioul,Chaudière,Simple flux,Chauffage,33.98632529165241,33384.989100396066
+Studio,135,1981,Moyenne,Fioul,Ballon,Double flux,Chauffage,20.029273984901515,38132.81536551559
+Appartement,40,1996,Bonne,Fioul,Ballon,Naturelle,Aucun,29.326431930950065,13854.175638814957
+Maison,143,1987,Mauvaise,Électrique,Chaudière,Naturelle,Fenêtres,52.7467547419792,29167.11352768541
+Maison,34,1976,Moyenne,Gaz,Chaudière,Simple flux,Aucun,13.451192098861197,19240.35811500074
+Maison,150,2013,Bonne,Pompe à chaleur,Ballon,Naturelle,Fenêtres,48.8095510036897,20297.8493574769
+Maison,36,1958,Moyenne,Pompe à chaleur,Chaudière,Naturelle,Isolation,37.008427105291936,12221.749368533712
+Studio,83,2021,Bonne,Électrique,Ballon,Double flux,Isolation,58.608491852887944,29431.72986122353
+Studio,64,1982,Moyenne,Gaz,Instantané,Double flux,Chauffage,10.771159812999617,11197.710602776044
+Appartement,65,1981,Mauvaise,Pompe à chaleur,Ballon,Double flux,Fenêtres,43.63557337992572,23266.649972502735
+Maison,116,1951,Bonne,Gaz,Chaudière,Simple flux,Isolation,6.826170983525161,4985.982891890788
+Maison,122,2015,Moyenne,Fioul,Ballon,Double flux,Isolation,49.03226845099956,9605.709281302785
+Studio,191,1998,Mauvaise,Gaz,Instantané,Naturelle,Isolation,37.712715055731486,25430.974110774012
+Studio,179,1990,Moyenne,Pompe à chaleur,Ballon,Double flux,Fenêtres,23.669760589854334,32963.354322367464
+Studio,103,1953,Moyenne,Électrique,Ballon,Double flux,Chauffage,40.39677323580887,22003.301115572303
+Maison,33,1961,Mauvaise,Pompe à chaleur,Chaudière,Simple flux,Aucun,38.86581120682335,14502.662636957164
+Maison,119,1994,Bonne,Fioul,Chaudière,Naturelle,Fenêtres,32.40076440492264,23103.814935629987
+Maison,169,1986,Bonne,Fioul,Instantané,Double flux,Chauffage,42.41255333372102,4743.539541208682
+Studio,116,1956,Bonne,Électrique,Chaudière,Naturelle,Isolation,45.84885866599896,18168.746709026862
+Maison,39,2009,Moyenne,Gaz,Instantané,Simple flux,Fenêtres,6.616694516607901,17029.57645426258
+Maison,98,1983,Moyenne,Fioul,Ballon,Naturelle,Chauffage,20.611999073475474,15647.739127316796
+Studio,37,1989,Bonne,Fioul,Chaudière,Naturelle,Isolation,44.37037305751487,36543.23578529436
+Studio,61,1993,Moyenne,Électrique,Ballon,Naturelle,Aucun,51.99118013532685,20706.55854502532
+Maison,79,1963,Mauvaise,Gaz,Ballon,Naturelle,Isolation,40.866778504174086,13861.62615446499
+Maison,182,1954,Mauvaise,Gaz,Chaudière,Naturelle,Chauffage,17.90707210438531,35580.9674471086
+Maison,33,1959,Moyenne,Gaz,Chaudière,Simple flux,Fenêtres,37.33364041107128,38046.16748435448
+Appartement,83,1977,Bonne,Fioul,Chaudière,Naturelle,Aucun,34.343155891483256,31708.032534111117
+Studio,153,2010,Moyenne,Électrique,Ballon,Simple flux,Chauffage,17.712200183520565,3964.479815178024
+Appartement,138,1984,Moyenne,Gaz,Chaudière,Naturelle,Aucun,10.681992641820862,24217.486616818373
+Maison,39,2002,Moyenne,Pompe à chaleur,Instantané,Naturelle,Isolation,57.349648198278146,26286.557636989015
+Appartement,58,2005,Mauvaise,Fioul,Ballon,Naturelle,Fenêtres,34.27347438544645,6778.177448652656
+Maison,64,2001,Moyenne,Électrique,Instantané,Double flux,Aucun,10.164539368418012,27558.8804925548

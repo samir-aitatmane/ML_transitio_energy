@@ -1,0 +1,10 @@
+type_chauffage,modele,surface_min,surface_max,prix
+Radiateurs électriques,standard,0,1000,567.6
+PAC air/eau,9kW,0,99,12546.9
+PAC air/eau,14kW,100,10000,15644.0
+PAC air/air,9kW,0,99,4942.9
+PAC air/air,14kW,100,10000,6000.0
+Chaudière gaz condensation,24kW,0,99,5290.0
+Chaudière gaz condensation,30kW,100,10000,6544.0
+Chaudière biomasse,24kW,0,99,6824.6
+Chaudière biomasse,30kW,100,10000,7500.0
