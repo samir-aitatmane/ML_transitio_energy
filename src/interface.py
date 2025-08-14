@@ -260,6 +260,9 @@ def calcul_cout_total_intelligent(surface, travaux,
         if chauffage_nouveau_mapped == "Radiateurs électriques":
             # Cas spécifique pour les radiateurs électriques
             cout = 567.60 * (surface / 10)
+            details["Chauffage (Radiateurs électriques)"] = cout  # Ajouter aux détails
+            total += cout  # Ajouter au total
+
         else:
             # Filtrer les données en fonction du type de chauffage et de la surface
             filtre = (df_chauf['type_chauffage'] == chauffage_nouveau_mapped) & \
