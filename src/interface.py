@@ -620,5 +620,4 @@ if st.button("🔧 Tester avec tous les inputs à 0"):
 
     # Imprimer les données dans le terminal
     print("Exemple avec tous les inputs à 0 :", valeurs_principales)
-    st.write("Exemple avec tous les inputs à 0 :", valeurs_principales)
 
